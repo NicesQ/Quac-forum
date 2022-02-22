@@ -1,0 +1,112 @@
+en:
+  activerecord:
+    attributes:
+      comment:
+        body: Text
+      answer:
+        body: Text
+        question: Question
+      question:
+        body: Text
+        title: Title
+      user:
+        created_at: Created at
+        email: Email
+        name: Name
+        old_password: Old password
+        password: Password
+        password_confirmation: Password confirmation
+        updated_at: Updated at
+    models:
+      question: Question
+  comments:
+    write: Write comment
+    writed_by: Comment by
+    create:
+      success: Comment created!
+    destroy:
+      success: Comment deleted!
+  answers:
+    writed_by: Answer by
+    create:
+      success: Answer created!
+    destroy:
+      success: Answer deleted!
+    edit:
+      title: Edit answer
+    update:
+      success: Answer updated!
+  en: English
+  global:
+    button:
+      delete: Delete
+      edit: Edit
+      show: Show
+      submit: Submit
+    dialog:
+      you_sure: Are you sure?
+    flash:
+      already_signed_in: You are already signed in!
+      not_signed_in: You are not signed in!
+  menu:
+    edit_profile: Profile
+    home: Home
+    log_in: Log In
+    log_out: Log out
+    questions: Questions
+    sign_up: Sign Up
+    users: Users
+  pages:
+    index:
+      title: Welcome to Quac!
+      about: Quac is an online Internet resource for mutual assistance of people from all corners of the vast World Wide Web to each other! As a User of this website you can ask Questions, Answer existing ones, or leave Comments.
+      slogan: Questions, Users, Answers & Comments - it's a Quac!
+      sign_up: Register!
+      log_in: Log in
+      to_questions: To questions
+  questions:
+    writed_by: Question by
+    create:
+      success: Question created!
+    destroy:
+      success: Question deleted!
+    edit:
+      title: Edit question
+    index:
+      new: New question
+      title: Questions
+    new:
+      title: New question
+    show:
+      answers: Answers
+      write_answer: Write your answer
+      comments: Comments
+    update:
+      success: Question updated!
+  ru: Russian
+  sessions:
+    create:
+      invalid_creds: Incorrect email and/or password!
+      success: Welcome back, %{name}!
+    destroy:
+      success: See you later!
+    new:
+      form:
+        email: Email
+        password: Password
+        remember_me: Remember me
+        submit: Sign in!
+      title: Log In
+  users:
+    create:
+      success: Welcome to the app, %{name}!
+    edit:
+      title: Edit profile
+    global:
+      forms:
+        register: Register
+        save: Save
+    new:
+      title: Registration
+    update:
+      success: Your profile was successfully updated!

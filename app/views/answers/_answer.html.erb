@@ -1,0 +1,25 @@
+<%= tag.article class: 'mb-3 card' do %>
+  <section class="card-header">
+      <%= t('answers.writed_by') %> <%= answer.user.name_or_email %>
+      <small>(<time datetime="<%= answer.formatted_created_at %>">
+        <%= answer.formatted_created_at %>
+      </time>)</small>
+  </section>
+
+  <div class="card-body">
+    <section class="card-text">
+      <div class="mt-2 mb-3 fs-4">
+        <%= sanitize answer.body %>
+      </div>
+    </section>
+    <% if current_user_check?(answer) %>
+    <%= link_to t('global.button.edit'), edit_question_answer_path(question, answer), 
+      class: 'btn btn-secondary btn-sm' %>
+    <%= link_to t('global.button.delete'), question_answer_path(question, answer), class: 'btn btn-danger btn-sm',
+      data: {method: :delete, confirm: t('global.dialog.you_sure')} %>
+    <% end %>
+  </div>
+<% end %>
+
+<%= render 'comments/commentable', commentable: answer, comment: @comment,
+  html_id: dom_id(answer, 'comment_form') %>

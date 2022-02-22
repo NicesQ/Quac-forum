@@ -1,0 +1,31 @@
+<% is_current_comment = comment&.for?(commentable) %>
+<%= link_to t('questions.show.comments'), "##{html_id}", class: ' my-3 btn btn-info', data: {'bs-toggle': 'collapse'} %>
+<%= tag.div class: "collapse #{'show' if is_current_comment}", id: html_id do %>
+  <%= form_with model: [commentable, (is_current_comment ? comment : commentable.comments.build)], class: 'pt-3 border-top my-2' do |f| %>
+    <% if is_current_comment %>
+      <%= render 'shared/errors', object: comment %>
+    <% end %>
+
+    <div class="mb-3 row">
+      <div class="mb-4">
+        <strong ><%= t('comments.write') %></strong>
+      </div>
+
+      <div class="col-sm-2 col-form-label ">
+        <%= f.label :body %>
+      </div>
+
+      <div class="col-sm-10">
+        <%= f.text_area :body, class: 'form-control form-control-sm' %>
+      </div>
+    </div>
+
+    <% if user_signed_in? %>
+      <%= f.submit t('global.button.submit'), class: 'btn btn-sm btn-success' %>
+    <% else %>
+      <%= link_to t('comments.please_log_in'), new_session_path, class: 'btn btn-dark btn-sm mb-3' %>
+    <% end %>
+  <% end %>
+  <%= render commentable.comments.includes(:user).decorate %>
+  <hr class="my-3">
+<% end %>

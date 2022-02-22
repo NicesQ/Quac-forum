@@ -1,0 +1,16 @@
+<% currently_at t('menu.home') %>
+<% provide :page_title, t('.title') %>
+
+<h1><%=t '.title'%></h1>
+
+<div class="my-3 fs-2">
+    <%= t('.about') %>
+    <hr class="my-3">
+    <%= t('.slogan') %>
+</div>
+
+<div class="text-center">
+<%= link_to t('.sign_up'), new_user_path, class: 'btn btn-success btn-lg mb-3' %>
+<%= link_to t('.log_in'), new_session_path, class: 'btn btn-warning btn-lg mb-3' %>
+<%= link_to t('.to_questions'), questions_path, class: 'btn btn-info btn-lg mb-3' %>
+</div>

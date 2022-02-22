@@ -1,0 +1,16 @@
+<% provide :page_title, t('.title') %>
+<% currently_at t('menu.questions') %>
+
+<h1 class="mb-4"><%= t('.title') %></h1>
+
+<% if user_signed_in? %>
+    <%= link_to t('.new'), new_question_path, class: 'btn btn-primary btn-lg mb-3' %>
+<% else %>
+    <%= link_to t('questions.please_log_in'), new_session_path, class: 'btn btn-dark btn-lg mb-3' %>
+<% end %>
+
+<%= pagination @pagy %>
+
+<%= render @questions %>
+
+<%= pagination @pagy %>

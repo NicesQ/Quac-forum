@@ -1,0 +1,23 @@
+<article class="card my-3">
+    <section class="card-header">
+      <%= t('questions.writed_by') %>
+      <%= question.user.name_or_email %>
+      <time datetime="<%= question.formatted_created_at %>">
+          <small>(<%= question.formatted_created_at %>)</small>
+        </time>
+    </section>
+
+    <div class="card-body">
+      <h4><%= question.title %></h2>
+
+      <section class="card-text">
+        
+
+        <p class="my-2">
+          <%= truncate strip_tags(question.body), length: 150, omission: '... ' %>
+        </p>
+      </section>
+
+    <%= link_to t('global.button.show'), question_path(question), class: 'btn btn-danger' %>   
+    </div>
+  </article>
